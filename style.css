@@ -2,9 +2,11 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #111111;
-  background: linear-gradient(-45deg, #e3d3b8, #f9f5ef, #fffbe9, #e3d3b8);
-  background-size: 400% 400%;
-  animation: gradientAnim 15s ease infinite;
+  background-color: #f7f6f3;
+  background-image: url("assests/logo-motif.png");
+  background-size: 80px 80px;
+  background-repeat: repeat;
+  background-position: center;
   position: relative;
   overflow-x: hidden;
 }
@@ -46,6 +48,53 @@ body {
   0% { transform: scale(1) translate(0,0) rotate(0deg);}
   50% { transform: scale(0.95) translate(-50px, 10px) rotate(-8deg);}
   100% { transform: scale(1) translate(0,0) rotate(0deg);}
+}
+
+.decor-blob {
+  position: absolute;
+  top: -30px;
+  left: -40px;
+  width: 120px;
+  height: 70px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cut-corners-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* Styles de base pour tous les blobs */
+.decor-blob {
+  position: absolute;
+  width: 130px;
+  height: 90px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Positionne chaque blob dans un coin différent */
+.about-blob {
+  top: -38px;
+  left: -46px;
+}
+.skills-blob {
+  top: -34px;
+  right: -44px;
+}
+.projects-blob {
+  bottom: -44px;
+  left: -40px;
+}
+.contact-blob {
+  bottom: -34px;
+  right: -38px;
+}
+
+.cut-corners-section {
+  position: relative; /* s'assure que les blobs se placent bien */
+  /* le reste de tes styles... */
 }
 
 header {
@@ -95,6 +144,8 @@ main {
   transition: all 0.6s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 2;
+   border-radius: 28px;
+  border: 2.5px solid #c1440e33;
 }
 
 .cut-corners-section::before,
@@ -236,6 +287,251 @@ section:not(:last-child) {
   width: 100%;
 }
 
+.cut-skills {
+  background: linear-gradient(120deg, #fffbe9 80%, #f6d78d11 100%);
+  min-height: 480px;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 4px 40px 0 rgba(193,68,14,0.08);
+}
+
+/* Emoji fun animé */
+.fun-emoji {
+  font-size: 2.2rem;
+  vertical-align: middle;
+  margin-left: 0.4em;
+  filter: drop-shadow(0 2px 6px #fff8);
+  animation: emojiJump 2.2s infinite;
+}
+@keyframes emojiJump {
+  0%,100% { transform: translateY(0);}
+  50% { transform: translateY(-6px);}
+}
+
+/* Liste de compétences stylée */
+.cut-skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin-top: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+.cut-skills li {
+  background: #fff4;
+  border-radius: 16px;
+  padding: 0.4em 1.2em;
+  font-weight: 600;
+  font-size: 1.08rem;
+  border: 1.5px solid #f6d78d66;
+  box-shadow: 0 2px 10px #c1440e09;
+  letter-spacing: 0.5px;
+}
+
+/* Logos animés et “wiggle” au hover */
+.skills-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+.cut-skills.show .skills-logos {
+  opacity: 1;
+  transform: translateY(0);
+}
+.skills-logos img {
+  width: 56px;
+  margin: 0 8px;
+  border-radius: 18px;
+  box-shadow: 0 3px 12px #fff6;
+  filter: grayscale(1);
+  transition: filter 0.3s, transform 0.18s cubic-bezier(.5,1.8,.5,.7), box-shadow 0.18s;
+}
+.skills-logos img:hover {
+  animation: wiggle 0.6s;
+  filter: grayscale(0);
+  box-shadow: 0 6px 24px #c1440e55;
+}
+@keyframes wiggle {
+  0% { transform: rotate(-7deg) scale(1); }
+  20% { transform: rotate(7deg) scale(1.08); }
+  40% { transform: rotate(-3deg) scale(1.04);}
+  60% { transform: rotate(3deg) scale(1.02);}
+  80% { transform: rotate(-2deg) scale(1.01);}
+  100% { transform: rotate(0deg) scale(1);}
+}
+
+/* Responsive pour cette section */
+@media (max-width: 768px) {
+  .cut-skills ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .skills-logos {
+    gap: 14px;
+  }
+  .skills-logos img {
+    width: 40px;
+  }
+}
+
+/* === SECTION INTRO (HELLO) === */
+.intro-section {
+  padding: 60px 0 40px 0;
+  text-align: center;
+  background: transparent;
+}
+.intro-content h1 {
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: #c1440e;
+  margin-bottom: 0.2em;
+  line-height: 1.1;
+}
+.intro-punchline {
+  font-size: 1.25rem;
+  color: #111;
+  margin-bottom: 0.5em;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+.wave-emoji {
+  display: inline-block;
+  animation: waveHand 2s infinite;
+}
+@keyframes waveHand {
+  0% { transform: rotate(0deg);}
+  12% { transform: rotate(20deg);}
+  24% { transform: rotate(-10deg);}
+  36% { transform: rotate(12deg);}
+  48% { transform: rotate(-6deg);}
+  60% { transform: rotate(8deg);}
+  72% { transform: rotate(0deg);}
+  100% { transform: rotate(0deg);}
+}
+
+/* === PROJETS FUN === */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.fun-card {
+  background: #fff9f2;
+  border-radius: 22px;
+  border: 2px solid #f6d78d99;
+  box-shadow: 0 4px 22px #c1440e11;
+  transition:
+    transform 0.18s cubic-bezier(.19,1.04,.41,1.14),
+    box-shadow 0.15s;
+  max-width: 330px;
+  min-width: 220px;
+  position: relative;
+  overflow: visible;
+}
+.fun-card:hover {
+  transform: rotate(-1.8deg) scale(1.045) translateY(-7px);
+  box-shadow: 0 10px 36px #c1440e22, 0 3px 10px #1111;
+  z-index: 2;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.project-title {
+  font-size: 1.11rem;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+}
+.project-badge {
+  background: #c1440e;
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: bold;
+  padding: 0.2em 0.7em;
+  border-radius: 12px;
+  margin-left: 6px;
+  animation: badgePop 1.1s cubic-bezier(.7,2.5,.6,.8) infinite alternate;
+  letter-spacing: 0.4px;
+  box-shadow: 0 2px 8px #c1440e33;
+}
+@keyframes badgePop {
+  0% { transform: scale(1);}
+  60% { transform: scale(1.13) rotate(-4deg);}
+  100% { transform: scale(1);}
+}
+
+/* === BOUTON CONTACT ANIME === */
+.contact-btn {
+  display: inline-block;
+  margin-top: 1.2em;
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(120deg, #c1440e, #f6d78d 90%);
+  padding: 0.55em 2em;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 3px 18px #c1440e30;
+  cursor: pointer;
+  transition:
+    box-shadow 0.18s,
+    transform 0.16s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+.contact-btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -80%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(90deg, #fff7 0%, transparent 100%);
+  transform: skewX(-24deg);
+  transition: left 0.36s cubic-bezier(.3,2,.8,.8);
+  z-index: 0;
+}
+.contact-btn:hover {
+  box-shadow: 0 8px 30px #c1440e55;
+  transform: scale(1.06);
+}
+.contact-btn:hover::after {
+  left: 120%;
+}
+
+/* === FOOTER ANIME === */
+footer .fun-emoji {
+  font-size: 1.2em;
+  animation: emojiJump 1.7s infinite;
+}
+
+/* Pour la responsivité des projets */
+@media (max-width: 900px) {
+  .project-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .fun-card {
+    max-width: 99vw;
+    min-width: 0;
+  }
+}
+
+
+
 /* Responsive mobile */
 @media (max-width: 768px) {
   header {
@@ -267,4 +563,13 @@ section:not(:last-child) {
     max-width: 300px;
     height: auto;
   }
+
+  .decor-blob {
+    width: 70px;
+    height: 44px;
+  }
+  .about-blob { top: -20px; left: -18px; }
+  .skills-blob { top: -14px; right: -18px; }
+  .projects-blob { bottom: -18px; left: -16px; }
+  .contact-blob { bottom: -14px; right: -16px; }
 }
