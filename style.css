@@ -15,6 +15,30 @@ header {
   max-width: 120px;
 }
 
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+}
+
 main {
   padding: 2rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+.project-card {
+  border: 2px solid #111;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
