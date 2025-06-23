@@ -3,10 +3,6 @@ body {
   font-family: Arial, sans-serif;
   color: #111111;
   background-color: #f7f6f3;
-  background-image: url("assests/logo-motif.png");
-  background-size: 80px 80px;
-  background-repeat: repeat;
-  background-position: center;
   position: relative;
   overflow-x: hidden;
 }
