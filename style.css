@@ -144,6 +144,18 @@ main {
   border: 2.5px solid #c1440e33;
 }
 
+.cut-corners-section {
+  opacity: 0;
+  transform: translateY(48px) scale(0.97);
+  transition: 
+    opacity 0.7s cubic-bezier(.39,1.55,.49,.91),
+    transform 0.7s cubic-bezier(.39,1.55,.49,.91);
+}
+.cut-corners-section.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 .cut-corners-section::before,
 .cut-corners-section::after {
   content: "";
