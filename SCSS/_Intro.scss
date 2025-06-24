@@ -32,3 +32,14 @@
 body.dark .planet-bg svg circle {
   fill: #7c3aed;
 }
+
+.subtitle {
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  /* autres styles */
+}
+
+body.dark .subtitle {
+  color: var(--main-color); /* par exemple #ffab63 si tu gardes ton thème */
+}

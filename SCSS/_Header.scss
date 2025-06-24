@@ -31,15 +31,49 @@ nav a {
   font-weight: 600;
   font-size: 1.05rem;
 }
+
 #theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.45em;
+  background: #fff6;
+  border: 2px solid #c1440e33;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px #0002;
+  padding: 0.5em 0.5em;
+  font-size: 1.5em;
   cursor: pointer;
-  margin-left: 1.5em;
-  transition: transform 0.18s;
-  color: var(--main-color);
+ transition: 
+    background 0.19s, 
+    box-shadow 0.21s, 
+    border-color 0.18s, 
+    transform 0.15s;
+  outline: none;
+  position: relative;
 }
-#theme-toggle:hover {
-  transform: scale(1.15) rotate(-12deg);
+#theme-toggle:hover,
+#theme-toggle:focus-visible {
+  background: #ffe2c1;
+  box-shadow: 0 8px 24px #c1440e33;
+  border-color: #c1440e;
+  transform: scale(1.08) rotate(-7deg);
 }
+#theme-toggle:active {
+  transform: scale(0.96) rotate(-6deg);
+  background: #ffdbb6;
+}
+#theme-toggle:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.theme-label {
+  display: inline-block;
+  margin-left: 0.8em;
+  font-size: 1.08em;
+  color: #c1440e;
+  font-weight: 600;
+  vertical-align: middle;
+  user-select: none;
+}
+body.dark .theme-label {
+  color: #ffab63;
+}
+
