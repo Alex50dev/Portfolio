@@ -141,6 +141,44 @@ body:not(.dark) .shooting-star {
   filter: blur(0.7px) drop-shadow(0 6px 10px #ffbe5d70);
 }
 
+.planet-bg {
+  left: 70vw;
+  top: 8vh;
+  bottom: auto;
+  right: auto;
+  width: 130px;
+  height: 130px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.96;
+  animation: planet-float 13s ease-in-out infinite alternate;
+}
+@keyframes planet-float {
+  0% { transform: scale(1) translateY(0px) rotate(-2deg);}
+  50% { transform: scale(1.07) translateY(14px) rotate(3deg);}
+  100% { transform: scale(1) translateY(0px) rotate(-2deg);}
+}
+
+/* Adaptation pour petit écran */
+@media (max-width: 600px) {
+  .planet-bg {
+    left: -75px;
+    bottom: -80px;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Version mode sombre : planète “lune” ou violet foncé */
+body.dark .planet-bg svg circle {
+  fill: #7c3aed;
+}
+body.dark .planet-bg svg ellipse,
+body.dark .planet-bg svg circle[opacity] {
+  opacity: 0.25;
+}
+
+
 
 /* Header */
 .site-header {
