@@ -36,3 +36,69 @@ document.addEventListener('DOMContentLoaded', () => {
     starBg.appendChild(star);
   }
 });
+
+function createShootingStar() {
+  const star = document.createElement('div');
+  star.className = 'shooting-star';
+  // Position de départ aléatoire (10 à 60vh)
+  star.style.top = `${Math.random() * 50 + 10}vh`;
+  star.style.animationDelay = `${Math.random() * 4 + 0.5}s`;
+  document.body.appendChild(star);
+
+  // Nettoyage après l’animation
+  setTimeout(() => { star.remove(); }, 3500);
+}
+// Lance une étoile filante toutes les 2 à 6 secondes :
+setInterval(createShootingStar, Math.random() * 4000 + 2000);
+
+function launchRocket() {
+  // Crée le SVG rocket + flamme animée
+  const rocket = document.createElement('div');
+  rocket.className = 'rocket-svg-anim';
+  rocket.innerHTML = `
+  <svg width="60" height="60" viewBox="0 0 60 60" style="overflow: visible">
+    <!-- Corps de la fusée -->
+    <rect x="25" y="10" width="10" height="28" rx="5" fill="#fff" stroke="#c1440e" stroke-width="2"/>
+    <!-- Hublot -->
+    <circle cx="30" cy="20" r="3.5" fill="#58a6ff" stroke="#111" stroke-width="1"/>
+    <!-- Ailettes -->
+    <polygon points="25,37 19,46 27,41" fill="#f6d78d" stroke="#c1440e" stroke-width="1"/>
+    <polygon points="35,37 41,46 33,41" fill="#f6d78d" stroke="#c1440e" stroke-width="1"/>
+    <!-- Flamme animée -->
+    <g class="rocket-flame">
+      <ellipse cx="30" cy="49" rx="5" ry="10" fill="#ffab63" opacity="0.85">
+        <animate attributeName="rx" values="5;6;5" dur="0.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="0.6s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="30" cy="52" rx="2" ry="5" fill="#fff561" opacity="0.75">
+        <animate attributeName="rx" values="2;4;2" dur="0.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="0.7s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+  </svg>
+  `;
+  // Position de départ (hors de l'écran à gauche)
+  rocket.style.top = `${Math.random() * 60 + 15}vh`;
+  rocket.style.left = '-70px';
+
+  // Ajoute dans le conteneur
+  document.getElementById('rocket-container').appendChild(rocket);
+
+  // Anime le mouvement (CSS animate)
+  rocket.classList.add('launch');
+
+  // Nettoie après le passage
+  setTimeout(() => {
+    rocket.remove();
+  }, 5100); // Durée de l'animation + marge
+}
+
+// Lance une fusée toutes les 15 à 35 secondes, de façon aléatoire
+function randomRocketInterval() {
+  const delay = Math.random() * 20000 + 15000;
+  setTimeout(() => {
+    launchRocket();
+    randomRocketInterval();
+  }, delay);
+}
+randomRocketInterval();

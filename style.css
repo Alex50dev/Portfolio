@@ -57,6 +57,68 @@ body:not(.dark) .star {
   box-shadow: 0 0 6px 2px #1112;
 }
 
+.shooting-star {
+  position: fixed;
+  top: 10vh;   /* Point de départ vertical */
+  left: -80px; /* Hors écran à gauche */
+  width: 80px;
+  height: 2.5px;
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0.85), 
+    rgba(255,255,255,0.22) 70%, 
+    transparent 100%
+  );
+  box-shadow: 0 0 8px 2px #fff8;
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+  animation: shooting-star 3.2s cubic-bezier(.62,.02,.46,.99) infinite;
+  animation-delay: 1.7s;
+}
+
+/* Sombre/claire adaptatif */
+body:not(.dark) .shooting-star {
+  background: linear-gradient(90deg, #222 65%, transparent 100%);
+  box-shadow: 0 0 8px 2px #2224;
+}
+
+/* Animation : traverse l’écran en diagonale */
+@keyframes shooting-star {
+  0%   { opacity: 0; transform: translateY(0) translateX(0) scaleX(0.2);}
+  6%   { opacity: 1;}
+  40%  { opacity: 1;}
+  100% { opacity: 0; transform: translateY(38vh) translateX(120vw) scaleX(1.12);}
+}
+
+#rocket-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 3;  /* au-dessus du fond étoilé mais sous les sections */
+}
+.rocket-svg-anim {
+  position: absolute;
+  width: 60px; height: 60px;
+  will-change: transform;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.rocket-svg-anim.launch {
+  animation: rocket-traverse 5s linear forwards;
+  opacity: 1;
+}
+@keyframes rocket-traverse {
+  0%   { left: -70px; opacity: 0;}
+  5%   { opacity: 1;}
+  95%  { left: 110vw; opacity: 1;}
+  100% { left: 110vw; opacity: 0;}
+}
+.rocket-flame {
+  filter: blur(0.7px) drop-shadow(0 6px 10px #ffbe5d70);
+}
+
 
 /* Header */
 .site-header {
