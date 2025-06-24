@@ -13,7 +13,7 @@ body.dark {
   --main-color: #ffab63;
   --accent: #393939;
   --bg: #181818;
-  --text: #232323;
+  --text: #ffab63;
   --header-bg: #202020;
   --footer-bg: #181818;
   --card-bg: #232323;
@@ -438,6 +438,11 @@ body.dark .planet-bg svg circle {
 
 .project-card .project-screenshot:hover {
   transform: scale(1.03) rotate(-1.5deg);
+}
+
+body.dark .project-card {
+  background: rgba(34, 34, 34, 0.66);
+  color: #ffab63;
 }
 
 .contact-btn {

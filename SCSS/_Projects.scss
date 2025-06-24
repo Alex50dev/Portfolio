@@ -32,3 +32,9 @@
 .project-card .project-screenshot:hover {
   transform: scale(1.03) rotate(-1.5deg);
 }
+
+body.dark .project-card {
+  background: rgba(34, 34, 34, 0.66); // noir/gris translucide
+  // backdrop-filter: blur(3px);
+  color: #ffab63;
+}
