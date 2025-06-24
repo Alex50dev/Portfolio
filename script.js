@@ -77,20 +77,24 @@ function launchRocket() {
     </g>
   </svg>
   `;
-  // Position de départ (hors de l'écran à gauche)
-  rocket.style.top = `${Math.random() * 60 + 15}vh`;
-  rocket.style.left = '-70px';
+
+  // Position de décollage : bas de l'écran, position horizontale aléatoire (30vw à 70vw)
+  const leftPercent = Math.random() * 40 + 30;
+  rocket.style.left = `${leftPercent}vw`;
+  rocket.style.bottom = '-80px'; // Point de départ bas
 
   // Ajoute dans le conteneur
   document.getElementById('rocket-container').appendChild(rocket);
 
-  // Anime le mouvement (CSS animate)
-  rocket.classList.add('launch');
+  // Lance l’animation (lance la classe après insertion pour que l’animation se déclenche bien)
+  setTimeout(() => {
+    rocket.classList.add('launch');
+  }, 60);
 
   // Nettoie après le passage
   setTimeout(() => {
     rocket.remove();
-  }, 5100); // Durée de l'animation + marge
+  }, 5200); // Durée de l'animation + marge
 }
 
 // Lance une fusée toutes les 15 à 35 secondes, de façon aléatoire
