@@ -1,124 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Alexis</title>
+  <!-- Google Font : Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <!-- Blobs SVG animés en fond -->
-    <div class="bg-blobs">
-        <svg class="blob1" viewBox="0 0 200 200">
-            <path fill="#f7f6f3" opacity="0.6"
-                d="M45.6,-57.6C57.8,-48.1,65.3,-32.5,67.3,-17C69.2,-1.6,65.7,13.8,59.8,29.4C53.8,45,45.4,60.7,32.5,67.3C19.6,73.8,2.3,71.2,-15.2,68.2C-32.7,65.2,-50.4,61.9,-56.7,50.6C-62.9,39.2,-57.7,19.6,-56.5,1.3C-55.4,-17.1,-58.3,-34.3,-50.3,-44C-42.3,-53.8,-23.4,-56.2,-5.1,-53.2C13.2,-50.3,26.4,-41.1,45.6,-57.6Z"
-                transform="translate(100 100)" />
-        </svg>
-        <svg class="blob2" viewBox="0 0 200 200">
-            <path fill="#c1440e" opacity="0.04"
-                d="M37.6,-64.7C50.4,-57.7,62.8,-50.7,71.5,-39.3C80.1,-27.9,85,-12,84.7,4C84.3,20,78.6,36,67.7,45.9C56.8,55.7,40.8,59.4,26.1,60.2C11.4,61,-2.2,59,-16.7,57.3C-31.3,55.6,-46.8,54.2,-57,45.1C-67.3,36,-72.3,19.2,-70.2,4.3C-68.1,-10.6,-58.9,-23.6,-50.2,-35.1C-41.5,-46.6,-33.3,-56.5,-22.5,-64.4C-11.8,-72.2,1.5,-78,14.6,-74.5C27.7,-70.9,40.8,-58.8,37.6,-64.7Z"
-                transform="translate(100 100)" />
-        </svg>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">Alexis</div>
+      <nav>
+        <ul>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#skills">Compétences</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- INTRO FUN -->
-    <section id="intro" class="intro-section">
-        <div class="intro-content">
-            <h1>
-                Alexis <span class="fun-emoji wave-emoji">👋</span>
-            </h1>
-            <p class="intro-punchline">Développeur web créatif & enthousiaste !</p>
+  <!-- Intro -->
+  <section id="intro" class="section">
+    <div class="container">
+      <h1>Bienvenue sur mon portfolio !</h1>
+      <p class="subtitle">Développeur web passionné, créatif et motivé.</p>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>À propos</h2>
+      <p>Quelques mots sur toi, tes valeurs, tes objectifs…</p>
+    </div>
+  </section>
+
+  <!-- Compétences -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Compétences</h2>
+      <ul class="skills-list">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Git / GitHub</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projets -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projets</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Projet 1</h3>
+          <p>Description du projet, compétences développées...</p>
+          <a href="#" target="_blank">Voir le projet</a>
         </div>
-    </section>
+        <div class="project-card">
+          <h3>Projet 2</h3>
+          <p>Description du projet, compétences développées...</p>
+          <a href="#" target="_blank">Voir le projet</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <header>
-        <img src="assets/logo.png" alt="Mon logo" class="logo" />
-        <nav>
-            <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Pour toute question ou opportunité professionnelle, contactez-moi :</p>
+      <a href="mailto:monemail@example.com" class="contact-btn">Envoyer un mail</a>
+    </div>
+  </section>
 
-    <main>
-        <!-- Section À propos -->
-        <section id="about" class="cut-corners-section cut-about">
-            <h1>À propos <span class="fun-emoji">🧑‍💻</span></h1>
-            <svg class="decor-blob about-blob" viewBox="0 0 100 60">
-                <path fill="#c1440e" opacity="0.10" d="M20,20 Q50,-10 80,20 Q90,45 50,55 Q10,65 20,20 Z" />
-            </svg>
-            <p>
-                Je suis un développeur web passionné, spécialisé en développement front-end.
-                J'aime créer des sites performants, accessibles et élégants.
-            </p>
-        </section>
-
-        <!-- Section Compétences -->
-        <section id="skills" class="cut-corners-section cut-skills">
-            <h1>Compétences <span class="fun-emoji">🦾</span></h1>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Git / GitHub</li>
-            </ul>
-            <div class="skills-logos">
-                <img src="assets/html.png" alt="HTML" />
-                <img src="assets/css.png" alt="CSS" />
-                <img src="assets/js.png" alt="JavaScript" />
-                <img src="assets/react.png" alt="React" />
-            </div>
-        </section>
-
-        <!-- Section Projets fun -->
-        <section id="projects" class="cut-corners-section cut-projects">
-            <h1>Projets <span class="fun-emoji">🚀</span></h1>
-            <svg class="decor-blob projects-blob" viewBox="0 0 100 60">
-                <path fill="#f6d78d" opacity="0.09" d="M80,40 Q100,10 70,0 Q40,-5 10,30 Q0,60 50,60 Q90,70 80,40 Z" />
-            </svg>
-            <div class="project-list">
-                <div class="project-card fun-card new-badge">
-                    <div class="card-header">
-                        <span class="project-title">Projet 1</span>
-                        <span class="project-badge">Nouveau !</span>
-                    </div>
-                    <p>Ce projet m'a permis de développer mes compétences en API REST et en React.</p>
-                    <a href="#">Voir le projet</a>
-                </div>
-                <div class="project-card fun-card">
-                    <div class="card-header">
-                        <span class="project-title">Projet 2</span>
-                    </div>
-                    <p>Ce projet m'a permis d'améliorer mes compétences en responsive design.</p>
-                    <a href="#">Voir le projet</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Contact -->
-        <section id="contact" class="cut-corners-section cut-contact">
-            <h1>Contact <span class="fun-emoji">📫</span></h1>
-            <svg class="decor-blob contact-blob" viewBox="0 0 100 60">
-                <path fill="#c1440e" opacity="0.07" d="M60,0 Q100,20 90,60 Q60,70 10,50 Q-10,30 60,0 Z" />
-            </svg>
-            <p>
-                Vous pouvez me contacter par email :
-            </p>
-            <a href="mailto:monemail@example.com" class="contact-btn">Me contacter</a>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Mon Nom - Portfolio Développeur Web <span class="fun-emoji">🌟</span></p>
-    </footer>
-
-    <script src="script.js"></script>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      © 2025 Alexis - Portfolio Développeur Web
+    </div>
+  </footer>
 </body>
-
 </html>
