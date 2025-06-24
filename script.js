@@ -106,3 +106,37 @@ function randomRocketInterval() {
   }, delay);
 }
 randomRocketInterval();
+
+
+function animateLogosLoop() {
+  const row = document.getElementById('skills-logos-row');
+  if (!row) return;
+  const logos = Array.from(row.querySelectorAll('img'));
+  let index = 0;
+  let direction = 1; // 1 = show, -1 = hide
+
+  function showNext() {
+    if (index < logos.length) {
+      logos[index].classList.add('show');
+      index++;
+      setTimeout(showNext, 140);
+    } else {
+      setTimeout(hideNext, 1000); // Pause avant de cacher
+    }
+  }
+
+  function hideNext() {
+    if (index > 0) {
+      index--;
+      logos[index].classList.remove('show');
+      setTimeout(hideNext, 110);
+    } else {
+      setTimeout(showNext, 900); // Petite pause avant de recommencer
+    }
+  }
+
+  showNext();
+}
+
+document.addEventListener("DOMContentLoaded", animateLogosLoop);
+

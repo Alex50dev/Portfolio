@@ -379,6 +379,65 @@ h1, h2, h3 {
   box-shadow: 0 6px 24px #c1440e35;
 }
 
+.skills-logos-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 3em auto 2em auto;
+  max-width: 800px;
+  padding: 1.3em 0;
+}
+
+.skills-logos-row img {
+  width: 54px;
+  height: 54px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px #c1440e22;
+  filter: grayscale(1) brightness(0.92);
+  pointer-events: none;
+  transition:
+    filter 0.28s,
+    transform 0.38s cubic-bezier(.5,1.7,.5,.7),
+    opacity 0.38s cubic-bezier(.5,1.7,.5,.7);
+}
+
+/* Quand la classe .show est sur le logo, il apparaît */
+.skills-logos-row img.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: grayscale(0) brightness(1.10);
+  pointer-events: auto;
+}
+
+/* Animation au survol */
+.skills-logos-row img.show:hover {
+  transform: scale(1.17) rotate(-6deg);
+  filter: grayscale(0) brightness(1.15) drop-shadow(0 6px 18px #c1440e44);
+  box-shadow: 0 8px 34px #c1440e34;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .skills-logos-row {
+    gap: 1em;
+    max-width: 99vw;
+    padding: 0.7em 0;
+  }
+  .skills-logos-row img {
+    width: 34px;
+    height: 34px;
+    border-radius: 7px;
+  }
+}
+
+
+
+
 @media (max-width: 700px) {
   .skills-list {
     flex-direction: column;
