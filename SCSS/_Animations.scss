@@ -1,0 +1,46 @@
+// _animations.scss
+
+@keyframes star-twinkle {
+  0%,100% { opacity: 0; }
+  10%, 90% { opacity: 0.6; }
+  30%, 70% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes shooting-star {
+  0%   { opacity: 0; transform: translateY(0) translateX(0) scaleX(0.2);}
+  6%   { opacity: 1;}
+  40%  { opacity: 1;}
+  100% { opacity: 0; transform: translateY(38vh) translateX(120vw) scaleX(1.12);}
+}
+
+@keyframes rocket-liftoff {
+  0% {
+    bottom: -80px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(-10deg) scale(0.9);
+  }
+  7% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(-10deg) scale(1.06);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(-4deg) scale(1.12);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(-1deg) scale(1.03);
+  }
+  100% {
+    bottom: 110vh;
+    opacity: 0;
+    transform: translateX(-50%) rotate(4deg) scale(1.04);
+  }
+}
+
+@keyframes planet-float {
+  0% { transform: scale(1) rotate(-2deg);}
+  50% { transform: scale(1.07) rotate(7deg);}
+  100% { transform: scale(1) rotate(-2deg);}
+}

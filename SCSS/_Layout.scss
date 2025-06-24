@@ -1,0 +1,54 @@
+// _layout.scss
+.site-header {
+  background: $header-bg;
+  box-shadow: 0 2px 8px #c1440e07;
+  padding: 0.7em 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 2vw;
+  }
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: $main-color;
+  letter-spacing: 1.5px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  padding: 0;
+  margin: 0;
+}
+nav a {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.section {
+  padding: 4rem 0 3rem 0;
+}
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 2vw;
+}
+
+.site-footer {
+  background: $footer-bg;
+  padding: 2em 0 1em 0;
+  color: #888;
+  text-align: center;
+  font-size: 0.97rem;
+  border-top: 1.5px solid $accent;
+  margin-top: 3em;
+}

@@ -1,0 +1,49 @@
+#rocket-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 3;
+}
+.rocket-svg-anim {
+  position: absolute;
+  width: 60px; height: 60px;
+  will-change: transform;
+  left: 50vw;
+  bottom: -80px;
+  opacity: 0;
+  transition: opacity 0.25s;
+  transform: translateX(-50%) rotate(-10deg);
+}
+.rocket-svg-anim.launch {
+  animation: rocket-liftoff 5s cubic-bezier(.3,1.12,.4,.99) forwards;
+  opacity: 1;
+}
+@keyframes rocket-liftoff {
+  0% {
+    bottom: -80px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(-10deg) scale(0.9);
+  }
+  7% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(-10deg) scale(1.06);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(-4deg) scale(1.12);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(-1deg) scale(1.03);
+  }
+  100% {
+    bottom: 110vh;
+    opacity: 0;
+    transform: translateX(-50%) rotate(4deg) scale(1.04);
+  }
+}
+
+.rocket-flame {
+  filter: blur(0.7px) drop-shadow(0 6px 10px #ffbe5d70);
+}

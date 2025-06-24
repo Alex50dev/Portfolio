@@ -1,0 +1,19 @@
+:root {
+  --main-color: #c1440e;
+  --accent: #f6d78d;
+  --bg: #f7f6f3;
+  --card-bg: #fff;
+  --text: #111111;
+  --container-width: 900px;
+  --header-bg: #fff;
+  --footer-bg: #fff;
+}
+body.dark {
+  --main-color: #ffab63;
+  --accent: #393939;
+  --bg: #181818;
+  --text: #232323;
+  --header-bg: #202020;
+  --footer-bg: #181818;
+  --card-bg: #232323;
+}

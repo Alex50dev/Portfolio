@@ -1,0 +1,45 @@
+.site-header {
+  background: #fff;
+  box-shadow: 0 2px 8px #c1440e07;
+  padding: 0.7em 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2vw;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--main-color);
+  letter-spacing: 1.5px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  padding: 0;
+  margin: 0;
+}
+nav a {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.45em;
+  cursor: pointer;
+  margin-left: 1.5em;
+  transition: transform 0.18s;
+  color: var(--main-color);
+}
+#theme-toggle:hover {
+  transform: scale(1.15) rotate(-12deg);
+}
