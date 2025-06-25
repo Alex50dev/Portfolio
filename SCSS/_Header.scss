@@ -77,3 +77,23 @@ body.dark .theme-label {
   color: #ffab63;
 }
 
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+}
+nav ul {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
