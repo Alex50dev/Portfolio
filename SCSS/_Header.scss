@@ -1,104 +1,103 @@
 .site-header {
-  background: #fff;
+  background: var(--header-bg);
   box-shadow: 0 2px 8px #c1440e07;
   padding: 0.7em 0;
   position: sticky;
   top: 0;
   z-index: 10;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2vw;
+    gap: 2em;
+  }
 }
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 2vw;
-}
+
 .logo {
   font-weight: 700;
   font-size: 1.5rem;
   color: var(--main-color);
   letter-spacing: 1.5px;
 }
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 2em;
+  align-items: center;
   padding: 0;
   margin: 0;
 }
+
 nav a {
   font-weight: 600;
   font-size: 1.05rem;
+  color: var(--main-color);
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover,
+  &:focus-visible {
+    color: #a43c0c;
+    outline: none;
+  }
 }
 
+// Theme toggle
 #theme-toggle {
-  background: #fff6;
-  border: 2px solid #c1440e33;
+  background: var(--card-bg);
+  border: 2px solid var(--accent);
   border-radius: 50%;
   box-shadow: 0 3px 10px #0002;
   padding: 0.5em 0.5em;
   font-size: 1.5em;
   cursor: pointer;
- transition: 
-    background 0.19s, 
-    box-shadow 0.21s, 
-    border-color 0.18s, 
+  transition:
+    background 0.19s,
+    box-shadow 0.21s,
+    border-color 0.18s,
     transform 0.15s;
   outline: none;
   position: relative;
-}
-#theme-toggle:hover,
-#theme-toggle:focus-visible {
-  background: #ffe2c1;
-  box-shadow: 0 8px 24px #c1440e33;
-  border-color: #c1440e;
-  transform: scale(1.08) rotate(-7deg);
-}
-#theme-toggle:active {
-  transform: scale(0.96) rotate(-6deg);
-  background: #ffdbb6;
-}
-#theme-toggle:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
+  color: var(--main-color);
+  &:hover,
+  &:focus-visible {
+    background: #ffe2c1;
+    box-shadow: 0 8px 24px #c1440e33;
+    border-color: #c1440e;
+    transform: scale(1.08) rotate(-7deg);
+    outline: none;
+  }
+  &:active {
+    transform: scale(0.96) rotate(-6deg);
+    background: #ffdbb6;
+  }
+  &:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
 }
 
+// Texte à côté du bouton (label)
 .theme-label {
   display: inline-block;
   margin-left: 0.8em;
   font-size: 1.08em;
-  color: #c1440e;
+  color: var(--main-color);
   font-weight: 600;
   vertical-align: middle;
   user-select: none;
+  transition: color 0.15s;
 }
 body.dark .theme-label {
   color: #ffab63;
 }
 
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2em;
-}
-nav ul {
-  display: flex;
-  gap: 2em;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.theme-switch {
-  display: flex;
-  align-items: center;
-  gap: 0.6em;
-}
-
+// Menu hamburger mobile
 #menu-toggle {
-  display: none; 
+  display: none;
   background: none;
   border: none;
   font-size: 2.1rem;
@@ -107,8 +106,63 @@ nav ul {
   padding: 0.13em 0.35em;
   border-radius: 7px;
   transition: background 0.13s, color 0.16s;
+  &:active,
+  &:focus-visible {
+    background: #ffe2c1;
+    outline: none;
+  }
 }
-#menu-toggle:active,
-#menu-toggle:focus-visible {
-  background: #ffe2c1;
+
+// Responsive header/menu
+@media (max-width: 800px) {
+  .site-header .container {
+    flex-direction: column;
+    gap: 1.1em;
+    align-items: flex-start;
+    padding: 0 2vw;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 1.2em;
+    width: 100%;
+    margin-top: 0.9em;
+    align-items: flex-start;
+    background: var(--header-bg);
+    border-radius: 13px;
+    box-shadow: 0 5px 20px #0001;
+    padding: 1.2em 1.1em;
+    position: absolute;
+    left: 0;
+    top: 58px;
+    display: none;
+    z-index: 101;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  #menu-toggle {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    z-index: 102;
+    background: var(--card-bg);
+    color: var(--main-color);
+    border: 2px solid var(--accent);
+    font-size: 2rem;
+    padding: 0.18em 0.5em;
+  }
+  #theme-toggle,
+  .theme-label {
+    font-size: 1em;
+    margin-left: 0.6em;
+  }
+}
+
+@media (max-width: 480px) {
+  #theme-toggle,
+  .theme-label {
+    font-size: 0.95em;
+    margin-left: 0.3em;
+  }
 }

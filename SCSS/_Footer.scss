@@ -1,7 +1,7 @@
 .site-footer {
-  background: #fff;
+  background: var(--footer-bg);
   padding: 2em 0 1em 0;
-  color: #888;
+  color: var(--text);
   text-align: center;
   font-size: 0.97rem;
   border-top: 1.5px solid var(--accent);

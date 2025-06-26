@@ -1,4 +1,4 @@
-// Mode sombre/clair avec sauvegarde du choix
+//Mode sombre/clair avec sauvegarde du choix 
 const themeBtn = document.getElementById('theme-toggle');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const savedTheme = localStorage.getItem('theme');
@@ -14,8 +14,15 @@ themeBtn.addEventListener('click', () => {
   const isDark = document.body.classList.contains('dark');
   themeBtn.textContent = isDark ? "☀️" : "🌙";
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  // Gère les étoiles filantes selon le mode
+  if (isDark) {
+    startShootingStars();
+  } else {
+    stopShootingStars();
+  }
 });
 
+//Création du fond étoilé statique
 document.addEventListener('DOMContentLoaded', () => {
   const nbStars = 60; // Change ce nombre si tu veux plus/moins d'étoiles
   const starBg = document.querySelector('.star-bg');
@@ -37,6 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+//Etoiles filantes seulement en mode sombre
+let shootingStarInterval = null;
+
 function createShootingStar() {
   const star = document.createElement('div');
   star.className = 'shooting-star';
@@ -48,9 +58,30 @@ function createShootingStar() {
   // Nettoyage après l’animation
   setTimeout(() => { star.remove(); }, 3500);
 }
-// Lance une étoile filante toutes les 2 à 6 secondes :
-setInterval(createShootingStar, Math.random() * 4000 + 2000);
 
+function startShootingStars() {
+  if (shootingStarInterval) return; // Ne pas doubler les intervalles
+  shootingStarInterval = setInterval(() => {
+    // Ne lance que si dark mode (sécurité)
+    if (document.body.classList.contains('dark')) {
+      createShootingStar();
+    }
+  }, Math.random() * 4000 + 2000);
+}
+
+function stopShootingStars() {
+  clearInterval(shootingStarInterval);
+  shootingStarInterval = null;
+  // Nettoie toutes les étoiles filantes restantes
+  document.querySelectorAll('.shooting-star').forEach(el => el.remove());
+}
+
+// Lance au chargement si dark
+if (document.body.classList.contains('dark')) {
+  startShootingStars();
+}
+
+//Fusée animée 
 function launchRocket() {
   // Crée le SVG rocket + flamme animée
   const rocket = document.createElement('div');
@@ -78,7 +109,7 @@ function launchRocket() {
   </svg>
   `;
 
-  // Position de décollage : bas de l'écran, position horizontale aléatoire (30vw à 70vw)
+  // Position de décollage : bas de l'écran, position horizontale aléatoire
   const leftPercent = Math.random() * 40 + 30;
   rocket.style.left = `${leftPercent}vw`;
   rocket.style.bottom = '-80px'; // Point de départ bas
@@ -86,7 +117,7 @@ function launchRocket() {
   // Ajoute dans le conteneur
   document.getElementById('rocket-container').appendChild(rocket);
 
-  // Lance l’animation (lance la classe après insertion pour que l’animation se déclenche bien)
+  // Lance l’animation
   setTimeout(() => {
     rocket.classList.add('launch');
   }, 60);
@@ -107,7 +138,7 @@ function randomRocketInterval() {
 }
 randomRocketInterval();
 
-
+//Logos animés dans la section compétences 
 function animateLogosLoop() {
   const row = document.getElementById('skills-logos-row');
   if (!row) return;
@@ -140,9 +171,11 @@ function animateLogosLoop() {
 
 document.addEventListener("DOMContentLoaded", animateLogosLoop);
 
+//Menu burger responsive 
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
-
-menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('open');
-});
+if (menuToggle && menu) {
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+}

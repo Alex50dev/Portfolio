@@ -1,3 +1,6 @@
+@import '_Variables.scss';
+
+// Groupes de compétences
 .skills-group {
   margin-top: 2rem;
   display: flex;
@@ -6,10 +9,12 @@
 }
 .skills-group h2 {
   margin-top: 1.5em;
-  font-size: 1.2rem;
-  color: #c1440e;
+  font-size: 1.17rem;
+  color: var(--main-color);
   letter-spacing: 0.5px;
 }
+
+// Liste des compétences
 .skills-list {
   list-style: none;
   padding: 0;
@@ -24,28 +29,42 @@
   display: flex;
   align-items: center;
   gap: 0.7em;
-  font-size: 1.07rem;
+  font-size: 1.1rem; 
   font-weight: 600;
-  background: #fff4;
+  background: #fff8;
   border-radius: 16px;
-  padding: 0.4em 1.2em;
-  border: 1.5px solid #f6d78d66;
-  box-shadow: 0 2px 10px #c1440e09;
-  transition: background 0.28s;
+  padding: 0.5em 1.4em;
+  border: 1.5px solid var(--accent);
+  box-shadow: 0 2px 10px #c1440e0c;
+  transition: background 0.28s, color 0.2s;
+
+  // Meilleur contraste en mode sombre
+  body.dark & {
+    background: #222a;
+    color: var(--main-color);
+    border-color: #ffab63aa;
+  }
 }
+
+// Logos dans la liste
 .skills-list img {
   width: 36px;
   height: 36px;
   border-radius: 8px;
   box-shadow: 0 2px 10px #c1440e10;
   filter: grayscale(1) brightness(0.92);
-  transition: filter 0.25s, transform 0.22s cubic-bezier(.5,1.8,.5,.7), box-shadow 0.22s;
+  transition:
+    filter 0.25s,
+    transform 0.22s cubic-bezier(.5,1.8,.5,.7),
+    box-shadow 0.22s;
 }
 .skills-list img:hover {
-  filter: grayscale(0) brightness(1.12) drop-shadow(0 4px 12px #c1440e33);
+  filter: grayscale(0) brightness(1.10) drop-shadow(0 4px 12px #c1440e33);
   transform: rotate(-7deg) scale(1.17);
   box-shadow: 0 6px 24px #c1440e35;
 }
+
+// Logos animés sous forme de bandeau
 .skills-logos-row {
   display: flex;
   justify-content: center;
@@ -69,16 +88,22 @@
     filter 0.28s,
     transform 0.38s cubic-bezier(.5,1.7,.5,.7),
     opacity 0.38s cubic-bezier(.5,1.7,.5,.7);
+
+  // Meilleur contraste en dark
+  body.dark & {
+    background: #232323;
+    box-shadow: 0 2px 8px #ffab6333;
+  }
 }
 .skills-logos-row img.show {
   opacity: 1;
   transform: translateY(0) scale(1);
-  filter: grayscale(0) brightness(1.10);
+  filter: grayscale(0) brightness(1.12);
   pointer-events: auto;
 }
 .skills-logos-row img.show:hover {
   transform: scale(1.17) rotate(-6deg);
-  filter: grayscale(0) brightness(1.15) drop-shadow(0 6px 18px #c1440e44);
-  box-shadow: 0 8px 34px #c1440e34;
+  filter: grayscale(0) brightness(1.17) drop-shadow(0 6px 18px #c1440e44);
+  box-shadow: 0 8px 34px #c1440e44;
   z-index: 2;
 }

@@ -1,24 +1,20 @@
+// Responsive pour les skills
 @media (max-width: 700px) {
   .skills-list {
     flex-direction: column;
     gap: 0.8em;
+    align-items: flex-start;
   }
-
-  .skills-list li {
-    justify-content: flex-start;
-  }
-
   .skills-list img {
     width: 28px;
     height: 28px;
   }
-
   .skills-logos-row {
     gap: 1em;
     max-width: 99vw;
     padding: 0.7em 0;
+    justify-content: center;
   }
-
   .skills-logos-row img {
     width: 34px;
     height: 34px;
@@ -26,47 +22,7 @@
   }
 }
 
-@media (max-width: 600px) {
-  .container {
-    padding: 0 1vw;
-  }
-
-  .site-header .container {
-    flex-direction: column;
-    gap: 1.2em;
-  }
-
-  .section {
-    padding: 2.4em 0 1.7em 0;
-  }
-
-  .skills-list {
-    gap: 0.6em 1.2em;
-  }
-
-  .project-card {
-    padding: 1em 0.8em;
-  }
-
-  .intro-flex {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-
-  .planet-bg {
-    width: 75px;
-    height: 75px;
-    margin: 0;
-  }
-
-  .planet-bg,
-  .planet-in-intro {
-    width: 120px;
-    height: 90px;
-  }
-}
-
+// Responsive général
 @media (max-width: 800px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -74,32 +30,55 @@
   }
 }
 
+// Container & sections sur mobile
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1vw;
+  }
+  .section {
+    padding: 2.4em 0 1.7em 0;
+  }
+  .project-card {
+    padding: 1em 0.8em;
+  }
+  .intro-flex {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .planet-bg,
+  .planet-in-intro {
+    width: 75px;
+    height: 75px;
+    margin: 0;
+  }
+}
+
+// Header responsive, menu burger, mode sombre bouton
 @media (max-width: 700px) {
   .site-header .container {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.6em;
+    gap: 0.7em;
     padding: 0 1vw;
   }
-
   .logo {
     text-align: center;
     margin: 0.5em 0 0.2em 0;
   }
-
   nav {
     width: 100%;
     position: relative;
   }
-
   #menu-toggle {
     display: block;
     position: absolute;
     right: 0;
-    top: 0.3em;
-    z-index: 9;
+    top: 0.2em;
+    z-index: 20;
+    font-size: 1.6rem;
+    padding: 0.15em 0.42em;
   }
-
   nav ul {
     flex-direction: column;
     gap: 1.2em;
@@ -112,39 +91,21 @@
     position: absolute;
     width: 100%;
     left: 0;
+    z-index: 9;
   }
-
   nav ul.open {
     display: flex;
   }
-
   .theme-switch {
     justify-content: center;
-    margin-top: 0.4em;
+    margin-top: 0.3em;
   }
-}
-
-@media (max-width: 700px) {
-  #menu-toggle {
-    position: absolute;
-    right: 0;
-    top: 0.2em;
-    z-index: 20;
-    /* Mets une valeur haute ! */
-  }
-
-  nav ul {
-    z-index: 9;
-    /* Plus bas */
-  }
-
   #theme-toggle {
-    font-size: 1.25em;
-    padding: 0.28em 0.39em;
+    font-size: 1.12em;
+    padding: 0.22em 0.34em;
   }
-
   .theme-label {
-    font-size: 0.95em;
-    margin-left: 0.45em;
+    font-size: 0.94em;
+    margin-left: 0.4em;
   }
 }

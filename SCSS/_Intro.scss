@@ -4,21 +4,33 @@
   justify-content: flex-start;
   gap: 3rem;
   position: relative;
+  margin-bottom: 3rem;
+  min-height: 180px;
 }
+
 .intro-text {
-  flex: 1 1 300px;
+  flex: 1 1 320px;
   min-width: 0;
+  color: var(--text);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  font-weight: 400;
 }
+
 .planet-bg {
   position: static;
-  width: 100px;
-  height: 100px;
-  margin-left: 8px;
+  width: 120px;
+  height: 120px;
+  margin-left: 22px;
   flex-shrink: 0;
-  transition: transform 0.5s cubic-bezier(.37,1.66,.53,.99), filter 0.4s;
+  transition: 
+    transform 0.5s cubic-bezier(.37,1.66,.53,.99),
+    filter 0.4s;
   cursor: pointer;
-  opacity: 0.96;
+  opacity: 0.98;
   animation: planet-float 9s ease-in-out infinite alternate;
+  z-index: 2;
 }
 @keyframes planet-float {
   0% { transform: scale(1) rotate(-2deg);}
@@ -34,12 +46,33 @@ body.dark .planet-bg svg circle {
 }
 
 .subtitle {
-  color: #555;
+  color: #333;
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  /* autres styles */
+  font-weight: 500;
+  letter-spacing: 0.2px;
 }
 
 body.dark .subtitle {
-  color: var(--main-color); /* par exemple #ffab63 si tu gardes ton thème */
+  color: #ffab63;
+}
+
+// Responsive
+@media (max-width: 700px) {
+  .intro-flex {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+    min-height: unset;
+    margin-bottom: 2rem;
+  }
+  .planet-bg {
+    width: 85px;
+    height: 85px;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .intro-text {
+    font-size: 1rem;
+  }
 }
