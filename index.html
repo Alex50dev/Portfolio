@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,217 +8,197 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
-  <div class="star-bg"></div>
-  <div class="shooting-star"></div>
-  <div id="rocket-container"></div>
+  <div class="star-bg" aria-hidden="true"></div>
+  <div class="shooting-star" aria-hidden="true"></div>
+  <div id="rocket-container" aria-hidden="true"></div>
 
   <!-- Header -->
   <header class="site-header">
-  <div class="container">
-    <span class="logo">Alexis</span>
-    <nav>
-      <ul id="menu">
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button id="menu-toggle" aria-label="Afficher / masquer le menu">
-        ☰
-      </button>
-    </nav>
-    <div class="theme-switch">
-      <button id="theme-toggle" aria-label="Changer le thème">🌙</button>
-      <span class="theme-label">Changer de thème</span>
-    </div>
-  </div>
-</header>
-
-
-
-  <!-- Intro -->
-  <section id="intro" class="section">
-    <div class="container intro-flex">
-      <div class="intro-text">
-        <h1>Bienvenue sur mon portfolio !</h1>
-        <p class="subtitle">Développeur web passionné, créatif et motivé.</p>
-        <a href="assests/CV Alexis LEVESQUE.pdf" class="btn-cv-main" target="_blank" rel="noopener">
-          <span aria-hidden="true">📄</span> Mon CV (PDF)
-        </a>
-      </div>
-      <div class="planet-bg">
-        <svg width="200" height="180" viewBox="0 0 220 160">
-          <!-- Corps planète -->
-          <circle cx="110" cy="80" r="60" fill="#4472c4" />
-          <!-- Ombre -->
-          <ellipse cx="95" cy="115" rx="47" ry="20" fill="#1a335f" opacity="0.3" />
-          <!-- Halo -->
-          <ellipse cx="95" cy="80" rx="62" ry="18" fill="#fff" opacity="0.08" />
-          <!-- Anneaux -->
-          <ellipse cx="110" cy="95" rx="85" ry="16" fill="none" stroke="#d6d6fa" stroke-width="5" opacity="0.42" />
-          <!-- Quelques cratères -->
-          <circle cx="110" cy="65" r="8" fill="#fff" opacity="0.17" />
-          <ellipse cx="55" cy="100" rx="6" ry="3" fill="#fff" opacity="0.1" />
-          <circle cx="80" cy="120" r="4" fill="#fff" opacity="0.12" />
-        </svg>
+    <div class="container">
+      <span class="logo">Alexis</span>
+      <nav aria-label="Navigation principale">
+        <ul id="menu">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#skills">Compétences</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="menu-toggle" type="button" aria-label="Afficher ou masquer le menu principal" aria-expanded="false" aria-controls="menu">
+          ☰
+        </button>
+      </nav>
+      <div class="theme-switch">
+        <button id="theme-toggle" type="button" aria-label="Changer le thème">
+          🌙
+        </button>
+        <span class="theme-label">Changer de thème</span>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- À propos -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>À propos</h2>
-      <p>
-        Je m'appelle Alexis, j'ai 30 ans et je suis passionné d'informatique depuis plus de 10 ans.<br><br>
-        J'ai débuté ma carrière professionnelle dans la logistique, où j’ai travaillé pendant 6 ans au sein de
-        différentes entreprises.<br><br>
-        Au fil de mes expériences, j’ai acquis de nombreuses compétences liées à la logistique, ainsi que des qualités
-        transversales : rigueur, autonomie, esprit d’équipe et sens de la relation client.<br><br>
-        Avec le temps, j’ai ressenti le besoin de retrouver un métier qui me passionne. J’ai donc choisi de me
-        réorienter vers le développement web et suivi la formation Intégrateur Web chez OpenClassrooms.<br><br>
-        Originaire de Normandie, j’ai pour objectif de découvrir de nouveaux horizons professionnels ailleurs en
-        France.<br><br>
-        Ma priorité : continuer à me perfectionner et à apprendre chaque jour, pour toujours progresser dans ce métier
-        en constante évolution.
-      </p>
+  <main id="main-content">
 
-    </div>
-  </section>
-
-  <!-- Compétences -->
-  <section id="skills" class="section container">
-    <h1>Compétences</h1>
-    <div class="skills-group">
-      <h2>Langages</h2>
-      <ul class="skills-list">
-        <li>
-          <img src="assests/Logo HTML.png" alt="HTML">
-          HTML5
-        </li>
-        <li>
-          <img src="assests/Logo CSS.png" alt="CSS">
-          CSS3
-        </li>
-        <li>
-          <img src="assests/Logo JS.png" alt="JavaScript">
-          JavaScript
-        </li>
-      </ul>
-      <h2>Frameworks & Librairies</h2>
-      <ul class="skills-list">
-        <li>
-          <img src="assests/Logo React.png" alt="React">
-          React
-        </li>
-      </ul>
-      <h2>Outils</h2>
-      <ul class="skills-list">
-        <li>
-          <img src="assests/Logo Git.png" alt="Git">
-          Git
-        </li>
-        <li>
-          <img src="assests/Logo Github.png" alt="GitHub">
-          GitHub
-        </li>
-        <li>
-          <img src="assests/Logo Vscode.png" alt="VSCode">
-          VS Code
-        </li>
-        <li>
-          <img src="assests/Logo Figma.png" alt="Figma">
-          Figma
-        </li>
-      </ul>
-    </div>
-    <div class="skills-logos-row" id="skills-logos-row">
-      <img src="assests/Logo HTML.png" alt="HTML">
-      <img src="assests/Logo CSS.png" alt="CSS">
-      <img src="assests/Logo JS.png" alt="JavaScript">
-      <img src="assests/Logo React.png" alt="React">
-      <img src="assests/Logo Git.png" alt="Git">
-      <img src="assests/Logo Github.png" alt="GitHub">
-      <img src="assests/Logo Vscode.png" alt="VSCode">
-      <img src="assests/Logo Figma.png" alt="Figma">
-    </div>
-
-
-
-  </section>
-
-
-  <!-- Projets -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2>Projets</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Créez une application web de location immobilière avec React</h3>
-          <img src="assests/Projet Kasa.png" alt="Aperçu du projet de l'agence immobilière Kasa"
-            class="project-screenshot" />
-          <p>
-            Ce projet consistait à développer le front-end d'une application web moderne en utilisant React et React
-            Router, afin d'offrir une expérience utilisateur fluide et interactive.<br><br>
-            J'ai conçu l'architecture de l'application en composants réutilisables, basé la navigation sur React Router,
-            et géré l'affichage dynamique des données à partir d'un fichier JSON simulant l’API.<br><br>
-            Le projet a démarré avec Vite pour une configuration rapide et performante, et j'ai utilisé Node.js pour
-            exécuter le code côté développement.<br><br>
-            Ce travail m’a permis d’approfondir ma maîtrise de React, du routage et de la gestion des données côté
-            front-end.
-          </p>
-          <ul class="skills-tags">
-            <li>React</li>
-            <li>React Router</li>
-            <li>Vite</li>
-            <li>Node.js</li>
-            <li>JSON</li>
-          </ul>
-          <a href="https://github.com/Alex50dev/Projet-Kasa" target="_blank">Voir le projet</a>
+    <!-- Intro -->
+    <section id="intro" class="section">
+      <div class="container intro-flex">
+        <div class="intro-text">
+          <h1>Bienvenue sur mon portfolio !</h1>
+          <p class="subtitle">Développeur web passionné, créatif et motivé.</p>
+          <a href="assests/CV Alexis LEVESQUE.pdf" class="btn-cv-main" target="_blank" rel="noopener" aria-label="Voir mon CV PDF">
+            <span aria-hidden="true">📄</span> Mon CV (PDF)
+          </a>
         </div>
-        <div class="project-card">
-          <h3>Créez une page web dynamique avec JavaScript</h3>
-          <img src="assests/Projet Sophie Bluel.png" alt="Aperçu du projet architecte d’intérieur Sophie Bluel"
-            class="project-screenshot" />
-          <p>
-            Dans ce projet, j’ai développé la partie front-end d’un site vitrine pour une architecte d’intérieur, en
-            créant une page de présentation dynamique des réalisations à partir d’un HTML fourni.<br><br>
-            L’objectif était de manipuler le DOM via JavaScript pur : gestion des événements utilisateurs, affichage
-            dynamique des travaux, création d’une page de connexion pour l’administrateur et d’une modale permettant
-            d’uploader de nouveaux médias.<br><br>
-            J’ai intégré la communication avec une API, ce qui m’a permis de découvrir et de pratiquer les échanges
-            client-serveur, essentiels pour les applications web modernes.<br><br>
-            J’ai également utilisé Figma pour suivre les maquettes, Visual Studio Code pour le développement, et GitHub
-            pour la gestion de version et le travail collaboratif.
-          </p>
-          <ul class="skills-tags">
-            <li>JavaScript</li>
-            <li>API REST</li>
-            <li>DOM</li>
-            <li>Gestion d’événements</li>
-            <li>Modale</li>
-            <li>Figma</li>
-            <li>GitHub</li>
-          </ul>
-          <a href="https://github.com/Alex50dev/Portfolio-architecte-sophie-bluel-master" target="_blank">Voir le
-            projet</a>
+        <div class="planet-bg">
+          <svg width="200" height="180" viewBox="0 0 220 160" aria-hidden="true" focusable="false">
+            <!-- Corps planète -->
+            <circle cx="110" cy="80" r="60" fill="#4472c4" />
+            <!-- Ombre -->
+            <ellipse cx="95" cy="115" rx="47" ry="20" fill="#1a335f" opacity="0.3" />
+            <!-- Halo -->
+            <ellipse cx="95" cy="80" rx="62" ry="18" fill="#fff" opacity="0.08" />
+            <!-- Anneaux -->
+            <ellipse cx="110" cy="95" rx="85" ry="16" fill="none" stroke="#d6d6fa" stroke-width="5" opacity="0.42" />
+            <!-- Quelques cratères -->
+            <circle cx="110" cy="65" r="8" fill="#fff" opacity="0.17" />
+            <ellipse cx="55" cy="100" rx="6" ry="3" fill="#fff" opacity="0.1" />
+            <circle cx="80" cy="120" r="4" fill="#fff" opacity="0.12" />
+          </svg>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Pour toute question ou opportunité professionnelle, contactez-moi :</p>
-      <a href="mailto:alexis.levesque@hotmail.fr" class="contact-btn">Envoyer un mail</a>
-    </div>
-  </section>
+    <!-- À propos -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">À propos</h2>
+        <p>
+          Je m'appelle Alexis, j'ai 30 ans et je suis passionné d'informatique depuis plus de 10 ans.<br><br>
+          J'ai débuté ma carrière professionnelle dans la logistique, où j’ai travaillé pendant 6 ans au sein de différentes entreprises.<br><br>
+          Au fil de mes expériences, j’ai acquis de nombreuses compétences liées à la logistique, ainsi que des qualités transversales : rigueur, autonomie, esprit d’équipe et sens de la relation client.<br><br>
+          Avec le temps, j’ai ressenti le besoin de retrouver un métier qui me passionne. J’ai donc choisi de me réorienter vers le développement web et suivi la formation Intégrateur Web chez OpenClassrooms.<br><br>
+          Originaire de Normandie, j’ai pour objectif de découvrir de nouveaux horizons professionnels ailleurs en France.<br><br>
+          Ma priorité : continuer à me perfectionner et à apprendre chaque jour, pour toujours progresser dans ce métier en constante évolution.
+        </p>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="skills" class="section container" aria-labelledby="skills-title">
+      <h2 id="skills-title">Compétences</h2>
+      <div class="skills-group">
+        <h3>Langages</h3>
+        <ul class="skills-list">
+          <li>
+            <img src="assests/Logo HTML.png" alt="HTML" title="HTML5">
+            HTML5
+          </li>
+          <li>
+            <img src="assests/Logo CSS.png" alt="CSS" title="CSS3">
+            CSS3
+          </li>
+          <li>
+            <img src="assests/Logo JS.png" alt="JavaScript" title="JavaScript">
+            JavaScript
+          </li>
+        </ul>
+        <h3>Frameworks & Librairies</h3>
+        <ul class="skills-list">
+          <li>
+            <img src="assests/Logo React.png" alt="React" title="React">
+            React
+          </li>
+        </ul>
+        <h3>Outils</h3>
+        <ul class="skills-list">
+          <li>
+            <img src="assests/Logo Git.png" alt="Git" title="Git">
+            Git
+          </li>
+          <li>
+            <img src="assests/Logo Github.png" alt="GitHub" title="GitHub">
+            GitHub
+          </li>
+          <li>
+            <img src="assests/Logo Vscode.png" alt="VSCode" title="VS Code">
+            VS Code
+          </li>
+          <li>
+            <img src="assests/Logo Figma.png" alt="Figma" title="Figma">
+            Figma
+          </li>
+        </ul>
+      </div>
+      <div class="skills-logos-row" id="skills-logos-row">
+        <img src="assests/Logo HTML.png" alt="HTML" title="HTML5">
+        <img src="assests/Logo CSS.png" alt="CSS" title="CSS3">
+        <img src="assests/Logo JS.png" alt="JavaScript" title="JavaScript">
+        <img src="assests/Logo React.png" alt="React" title="React">
+        <img src="assests/Logo Git.png" alt="Git" title="Git">
+        <img src="assests/Logo Github.png" alt="GitHub" title="GitHub">
+        <img src="assests/Logo Vscode.png" alt="VSCode" title="VS Code">
+        <img src="assests/Logo Figma.png" alt="Figma" title="Figma">
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projets</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Créez une application web de location immobilière avec React</h3>
+            <img src="assests/Projet Kasa.png" alt="Aperçu du projet de l'agence immobilière Kasa" title="Projet Kasa" class="project-screenshot" />
+            <p>
+              Ce projet consistait à développer le front-end d'une application web moderne en utilisant React et React Router, afin d'offrir une expérience utilisateur fluide et interactive.<br><br>
+              J'ai conçu l'architecture de l'application en composants réutilisables, basé la navigation sur React Router,
+              et géré l'affichage dynamique des données à partir d'un fichier JSON simulant l’API.<br><br>
+              Le projet a démarré avec Vite pour une configuration rapide et performante, et j'ai utilisé Node.js pour exécuter le code côté développement.<br><br>
+              Ce travail m’a permis d’approfondir ma maîtrise de React, du routage et de la gestion des données côté front-end.
+            </p>
+            <ul class="skills-tags">
+              <li>React</li>
+              <li>React Router</li>
+              <li>Vite</li>
+              <li>Node.js</li>
+              <li>JSON</li>
+            </ul>
+            <a href="https://github.com/Alex50dev/Projet-Kasa" target="_blank" rel="noopener" aria-label="Voir le projet Kasa sur GitHub">Voir le projet</a>
+          </div>
+          <div class="project-card">
+            <h3>Créez une page web dynamique avec JavaScript</h3>
+            <img src="assests/Projet Sophie Bluel.png" alt="Aperçu du projet architecte d’intérieur Sophie Bluel" title="Projet Sophie Bluel" class="project-screenshot" />
+            <p>
+              Dans ce projet, j’ai développé la partie front-end d’un site vitrine pour une architecte d’intérieur, en créant une page de présentation dynamique des réalisations à partir d’un HTML fourni.<br><br>
+              L’objectif était de manipuler le DOM via JavaScript pur : gestion des événements utilisateurs, affichage dynamique des travaux, création d’une page de connexion pour l’administrateur et d’une modale permettant d’uploader de nouveaux médias.<br><br>
+              J’ai intégré la communication avec une API, ce qui m’a permis de découvrir et de pratiquer les échanges client-serveur, essentiels pour les applications web modernes.<br><br>
+              J’ai également utilisé Figma pour suivre les maquettes, Visual Studio Code pour le développement, et GitHub pour la gestion de version et le travail collaboratif.
+            </p>
+            <ul class="skills-tags">
+              <li>JavaScript</li>
+              <li>API REST</li>
+              <li>DOM</li>
+              <li>Gestion d’événements</li>
+              <li>Modale</li>
+              <li>Figma</li>
+              <li>GitHub</li>
+            </ul>
+            <a href="https://github.com/Alex50dev/Portfolio-architecte-sophie-bluel-master" target="_blank" rel="noopener" aria-label="Voir le projet Sophie Bluel sur GitHub">Voir le projet</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact</h2>
+        <p>Pour toute question ou opportunité professionnelle, contactez-moi :</p>
+        <a href="mailto:alexis.levesque@hotmail.fr" class="contact-btn">Envoyer un mail</a>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -229,5 +208,4 @@
   </footer>
   <script src="script.js"></script>
 </body>
-
 </html>
