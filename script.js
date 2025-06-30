@@ -24,7 +24,7 @@ themeBtn.addEventListener('click', () => {
 
 //Création du fond étoilé statique
 document.addEventListener('DOMContentLoaded', () => {
-  const nbStars = 60; // Change ce nombre si tu veux plus/moins d'étoiles
+  const nbStars = 60; // Change ce nombre plus/moins d'étoiles
   const starBg = document.querySelector('.star-bg');
   for(let i = 0; i < nbStars; i++) {
     const star = document.createElement('div');
